@@ -1,0 +1,375 @@
+/* ============================================================
+   College Student Management System — style.css
+   Full-Stack Web Development | ANITS | 23CM4121
+   ============================================================ */
+
+/* -- Reset & Base ------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f0f4f8;
+  color: #1a2332;
+  min-height: 100vh;
+}
+
+/* -- Auth Page ---------------------------------------------- */
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e3a5f 0%, #0d6efd 100%);
+  padding: 1.5rem;
+}
+
+.auth-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.auth-header .college-logo { font-size: 3rem; }
+.auth-header h1 { font-size: 1.5rem; color: #1e3a5f; font-weight: 700; }
+.auth-header p { color: #6c757d; font-size: 0.9rem; margin-top: 2px; }
+
+.auth-toggle {
+  display: flex;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.auth-toggle button {
+  flex: 1;
+  padding: 0.6rem;
+  border: none;
+  background: #f8f9fa;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.auth-toggle button.active {
+  background: #0d6efd;
+  color: #fff;
+  font-weight: 600;
+}
+
+.auth-form .form-group { margin-bottom: 1rem; }
+.auth-form label { font-size: 0.85rem; font-weight: 600; color: #374151; display: block; margin-bottom: 4px; }
+.auth-form input, .auth-form select {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+}
+.auth-form input:focus, .auth-form select:focus { outline: none; border-color: #0d6efd; }
+
+.auth-error {
+  background: #fef2f2;
+  border-left: 3px solid #ef4444;
+  color: #dc2626;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.auth-hint {
+  margin-top: 1.2rem;
+  padding: 0.8rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+/* -- App Layout --------------------------------------------- */
+.app { min-height: 100vh; display: flex; flex-direction: column; }
+
+.app-header {
+  background: linear-gradient(90deg, #1e3a5f 0%, #0d6efd 100%);
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.header-left { display: flex; align-items: center; gap: 0.8rem; }
+.header-logo { font-size: 2rem; }
+.header-left h1 { font-size: 1.3rem; font-weight: 700; }
+.header-left p { font-size: 0.8rem; opacity: 0.8; }
+.header-right { display: flex; align-items: center; gap: 0.8rem; }
+.user-badge { background: rgba(255,255,255,0.2); padding: 3px 10px; border-radius: 20px; font-size: 0.8rem; }
+.user-name { font-size: 0.9rem; font-weight: 600; }
+.btn-logout { padding: 0.4rem 0.9rem; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.4); color: #fff; border-radius: 6px; cursor: pointer; font-size: 0.85rem; transition: background 0.2s; }
+.btn-logout:hover { background: rgba(255,255,255,0.3); }
+
+/* Notice banner */
+.notice {
+  padding: 0.7rem 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.notice.success { background: #d1fae5; color: #065f46; border-left: 4px solid #10b981; }
+.notice.error { background: #fef2f2; color: #991b1b; border-left: 4px solid #ef4444; }
+
+/* Tab Navigation */
+.tab-nav {
+  display: flex;
+  gap: 4px;
+  padding: 0.8rem 2rem 0;
+  background: #fff;
+  border-bottom: 2px solid #e2e8f0;
+}
+.tab-nav button {
+  padding: 0.5rem 1.2rem;
+  border: none;
+  background: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  color: #64748b;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.tab-nav button.active {
+  background: #eff6ff;
+  color: #1e3a5f;
+  font-weight: 700;
+  border-bottom: 2px solid #0d6efd;
+}
+
+.main-content { flex: 1; padding: 1.5rem 2rem; }
+
+/* -- Section ------------------------------------------------ */
+.section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.section-header h2 { font-size: 1.1rem; color: #1e3a5f; }
+
+.filter-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.search-box {
+  padding: 0.5rem 0.9rem;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  min-width: 260px;
+}
+.search-box:focus { outline: none; border-color: #0d6efd; }
+.filter-row select {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+/* -- Tables ------------------------------------------------- */
+.table-wrapper { overflow-x: auto; margin-top: 1rem; }
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.data-table th {
+  background: #1e3a5f;
+  color: #fff;
+  padding: 0.65rem 0.9rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+}
+.data-table td {
+  padding: 0.65rem 0.9rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+.data-table tbody tr:hover { background: #f8fafc; }
+.data-table code { font-size: 0.82rem; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; }
+
+/* -- Badges ------------------------------------------------- */
+.dept-badge {
+  background: #eff6ff;
+  color: #1e40af;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.fee-badge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.fee-badge.paid { background: #d1fae5; color: #065f46; }
+.fee-badge.pending { background: #fef3c7; color: #92400e; }
+.fee-badge.partial { background: #fce7f3; color: #9d174d; }
+
+/* -- Buttons ------------------------------------------------ */
+.btn-primary {
+  padding: 0.6rem 1.4rem;
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.btn-primary:hover:not(:disabled) { background: #0b5ed7; }
+.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn-primary.full-width { width: 100%; padding: 0.75rem; margin-top: 0.5rem; }
+
+.btn-secondary {
+  padding: 0.5rem 1.1rem;
+  background: #f8f9fa;
+  color: #374151;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  transition: background 0.2s;
+}
+.btn-secondary:hover { background: #e9ecef; }
+
+.btn-edit {
+  padding: 0.3rem 0.7rem;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-right: 4px;
+  transition: background 0.2s;
+}
+.btn-edit:hover { background: #2563eb; }
+
+.btn-delete {
+  padding: 0.3rem 0.7rem;
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.2s;
+}
+.btn-delete:hover { background: #dc2626; }
+
+.actions-cell { white-space: nowrap; }
+
+/* -- Student Form ------------------------------------------- */
+.student-form { margin-top: 1rem; }
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.form-group label { font-size: 0.85rem; font-weight: 600; color: #374151; }
+.form-group input, .form-group select {
+  padding: 0.6rem 0.85rem;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus { outline: none; border-color: #0d6efd; }
+
+.form-actions { display: flex; gap: 0.8rem; margin-top: 1.5rem; }
+
+/* -- Analytics ---------------------------------------------- */
+.analytics h3 { margin: 1.5rem 0 0.8rem; color: #1e3a5f; font-size: 1rem; }
+
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.stat-card {
+  border-radius: 10px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.stat-card.primary { background: #eff6ff; border-left: 4px solid #0d6efd; }
+.stat-card.success { background: #d1fae5; border-left: 4px solid #10b981; }
+.stat-card.warning { background: #fef3c7; border-left: 4px solid #f59e0b; }
+
+.stat-label { font-size: 0.8rem; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; }
+.stat-value { font-size: 1.8rem; font-weight: 700; color: #1e3a5f; }
+
+.fee-summary { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem; }
+.fee-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 0.9rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  color: #374151;
+  min-width: 160px;
+}
+
+/* -- States ------------------------------------------------- */
+.loading, .empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+/* -- Footer ------------------------------------------------- */
+.app-footer {
+  background: #1e3a5f;
+  color: rgba(255,255,255,0.65);
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 0.78rem;
+  margin-top: auto;
+}
+
+/* -- Responsive --------------------------------------------- */
+@media (max-width: 768px) {
+  .app-header { flex-direction: column; gap: 0.5rem; padding: 1rem; text-align: center; }
+  .tab-nav { padding: 0.5rem 1rem 0; }
+  .main-content { padding: 1rem; }
+  .section-header { flex-direction: column; align-items: flex-start; }
+  .filter-row { flex-direction: column; width: 100%; }
+  .search-box { min-width: 100%; }
+  .form-actions { flex-direction: column; }
+  .stats-cards { grid-template-columns: 1fr; }
+}
